@@ -1,0 +1,59 @@
+div.wrapper {
+    background-color: #a6dcde;
+}
+div.inner {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+}
+.header {
+
+}
+.clearfix:after {
+    content:" ";
+    display:block;
+    clear:both;
+}
+.tweet {
+    float: right;
+    padding: 5px;
+}
+table.list {
+    width: 90%;
+    /*max-width: 375px;*/
+    margin: 30px auto;
+    border-collapse: collapse;
+    text-align: center;
+    line-height: 1.5;
+    max-width: 375px;
+}
+table.list th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border: 1px solid #ccc;
+}
+table.list td {
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+    border: 1px solid #ccc;
+}
+.twitter {
+    width: 90%;
+    /*max-width: 350px;*/
+    margin: 30px auto;
+}
+.twitter img{
+    height: 30px;
+}
+.instagram {
+    width: 90%;
+    /*max-width: 350px;*/
+    margin: 30px auto;
+}
+.instagram img{
+    height: 30px;
+}
