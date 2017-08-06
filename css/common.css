@@ -1,5 +1,28 @@
+.clearfix:after {
+    content:" ";
+    display:block;
+    clear:both;
+}
+
+h1 {
+    margin: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    padding: 0;
+    font-size: 16px;
+}
+h2{
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
 div.wrapper {
-    background-color: #a6dcde;
+    background-color: #BBE1E8;
 }
 div.inner {
     margin: 0 auto;
@@ -10,50 +33,192 @@ div.inner {
 .header {
 
 }
-.clearfix:after {
-    content:" ";
-    display:block;
-    clear:both;
-}
+
+
 .tweet {
     float: right;
     padding: 5px;
 }
+
+
+
 table.list {
     width: 90%;
-    /*max-width: 375px;*/
     margin: 30px auto;
     border-collapse: collapse;
     text-align: center;
     line-height: 1.5;
-    max-width: 375px;
+    border: none;
+    font-size: 10px;
+    border: solid 1px #FFF;
 }
 table.list th {
     width: 150px;
     padding: 10px;
     font-weight: bold;
     vertical-align: top;
-    border: 1px solid #ccc;
+    border: none;
+    border-radius: 10px;
+    background-color: #DDD;
+    padding: 5px;
 }
 table.list td {
     width: 350px;
     padding: 10px;
     vertical-align: top;
-    border: 1px solid #ccc;
+    border: none;
+    border-radius: 10px;
+    background-color: #EEE;
+    padding: 5px;
 }
-.twitter {
+
+.inner-section {
     width: 90%;
-    /*max-width: 350px;*/
     margin: 30px auto;
+}
+
+/***********************
+   Countdown
+ ***********************/
+.countdown {
+    margin: 10px auto;
+}
+.countdown p {
+    text-align: center;
+    border-top: solid 2px #7aCcE7;
+    border-bottom: solid 2px #7aCcE7;
+}
+.countdown span#countdown_day {
+    font-size: 120%;
+    font-weight: bold;
+    color: red;
+}
+
+/***********************
+   Twitter
+ ***********************/
+.twitter {
 }
 .twitter img{
-    height: 30px;
+    height: 40px;
 }
+
+/***********************
+   Instagram
+ ***********************/
 .instagram {
-    width: 90%;
-    /*max-width: 350px;*/
-    margin: 30px auto;
 }
 .instagram img{
-    height: 30px;
+    height: 40px;
+}
+
+/***********************
+   Key Visual
+ ***********************/
+
+.keyvisual {
+    position: relative;
+}
+.keyvisual img{
+    width: 100%;
+}
+.keyvisual-copyright {
+    font-size: 10px;
+    color: #FFFFFF;
+    line-height: 10px;
+    margin: 5px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+/***********************
+   Admin message
+ ***********************/
+.admin-message {
+    margin: 10px auto;
+}
+.admin-message h2{
+    padding: 0px;
+    margin: 0 5px;
+    font-size: 12px;
+    color: #666;
+}
+.admin-message p{
+    padding: 0px;
+    margin: 0 5px;
+    font-size: 12px;
+    color: #222;
+}
+.admin-message .admin-avator {
+    width: 40px;
+    max-width: 20%;
+    border-radius: 50%;
+    margin: auto 15px auto 5px;
+    float: left;
+}
+
+.balloon {
+	position: relative;
+	display: inline-block;
+	padding: 0 5px;
+	/*width: 150px;*/
+    width: calc(80% - 27px);
+	/*height: 34px;
+	line-height: 30px;*/
+    min-height: 34px;
+    vertical-align: center;
+    height: auto;
+    margin: 1px 0;
+	color: #19283C;
+    font-size: 12px;
+	text-align: left;
+	background: #FFF;
+	border: 2px solid #BBE1E8;
+    border-radius: 10px;
+	z-index: 0;
+}
+.balloon:before {
+	content: "";
+	position: absolute;
+	top: 50%; left: -10px;
+	margin-top: -9px;
+	display: block;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 9px 9px 9px 0;
+	border-color: transparent #BBE1E8 transparent transparent;
+	z-index: 0;
+}
+
+.storelist-btn {
+    width: 90%;
+    margin: 30px auto;
+    height: 100px;
+}
+.storelist-btn img {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px 0 0 10px;
+    float: left;
+}
+.storelist-btn div {
+    height: 74px;
+    width: calc(100% - 120px);
+    padding: 13px 10px;
+    background-color: #7aCcE7;
+    border-radius: 0 10px 10px 0;
+    font-size: 16px;
+    text-align: center;
+    color: #FFF;
+    float: left;
+}
+
+.map {
+    width: 90%;
+    margin: 30px auto;
+}
+.map img {
+    width: 100%;
 }
