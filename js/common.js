@@ -16,7 +16,7 @@ $(function(){
     62,114,116,97,105,100,98,115,60))
     + escape(k_2) + "'");}
 
-    $("#contact").append('<a href=JavaScript:mail_to("","")><img src="./img/mail_icon2.svg"><\/a>');
+    $("#contact").append('<a href=JavaScript:mail_to("","")><img src="./img/icon/mail.png"><\/a>');
     //-->
 
 });
