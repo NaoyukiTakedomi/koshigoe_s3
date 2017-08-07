@@ -4,6 +4,30 @@
     clear:both;
 }
 
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+div.inner {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+}
+
+.inner-section {
+    width: 90%;
+    margin: 30px auto;
+}
+
+* {
+    font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
 h1 {
     margin: 0;
     -webkit-margin-before: 0;
@@ -20,20 +44,40 @@ h2{
     font-weight: bold;
 }
 
-
 div.wrapper {
+    padding: 2px 0;
     background-color: #BBE1E8;
 }
-div.inner {
-    margin: 0 auto;
-    width: 90%;
-    max-width: 600px;
-    background-color: #ffffff;
-}
+
 .header {
-
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    background-color: #FFFFFF;
+}
+.header .logo {
+    height: 5opx;
+    /*width: 30%;*/
+    margin: auto 0;
+}
+.header .logo img {
+    height: 50px;
+    /*width: 100%;*/
 }
 
+.header .header-icon img {
+    height: 20px;
+    margin: 15px 5px;
+}
+
+.footer {
+    margin: 10px auto 0 auto;
+}
+.footer p {
+    font-size: 12px;
+    padding: 0 0 10px 0;
+    margin: 0;
+}
 
 .tweet {
     float: right;
@@ -72,11 +116,6 @@ table.list td {
     padding: 5px;
 }
 
-.inner-section {
-    width: 90%;
-    margin: 30px auto;
-}
-
 /***********************
    Countdown
  ***********************/
@@ -85,13 +124,15 @@ table.list td {
 }
 .countdown p {
     text-align: center;
-    border-top: solid 2px #7aCcE7;
-    border-bottom: solid 2px #7aCcE7;
+    border-top: solid 2px #7acce7;
+    border-bottom: solid 2px #7acce7;
+    color: #333;
 }
 .countdown span#countdown_day {
-    font-size: 120%;
+    font-size: 135%;
     font-weight: bold;
-    color: red;
+    color: #FF2020;
+    padding: 0 5px;
 }
 
 /***********************
@@ -142,13 +183,13 @@ table.list td {
     padding: 0px;
     margin: 0 5px;
     font-size: 12px;
-    color: #666;
+    color: #777;
 }
 .admin-message p{
     padding: 0px;
-    margin: 0 5px;
+    margin: 0 2px 0 5px;
     font-size: 12px;
-    color: #222;
+    color: #333;
 }
 .admin-message .admin-avator {
     width: 40px;
@@ -162,10 +203,7 @@ table.list td {
 	position: relative;
 	display: inline-block;
 	padding: 0 5px;
-	/*width: 150px;*/
     width: calc(80% - 27px);
-	/*height: 34px;
-	line-height: 30px;*/
     min-height: 34px;
     vertical-align: center;
     height: auto;
@@ -192,6 +230,9 @@ table.list td {
 	z-index: 0;
 }
 
+/***********************
+   Store list button
+ ***********************/
 .storelist-btn {
     width: 90%;
     margin: 30px auto;
@@ -205,20 +246,147 @@ table.list td {
 }
 .storelist-btn div {
     height: 74px;
+    line-height: 74px;
     width: calc(100% - 120px);
     padding: 13px 10px;
-    background-color: #7aCcE7;
+    background-color: #7acce7;
     border-radius: 0 10px 10px 0;
-    font-size: 16px;
+    font-size: 7vw;
     text-align: center;
     color: #FFF;
     float: left;
+    display: table-cell;
+    vertical-align: middle;
 }
 
+/***********************
+   Map
+ ***********************/
 .map {
     width: 90%;
     margin: 30px auto;
 }
 .map img {
     width: 100%;
+}
+
+/***********************
+   Caution
+ ***********************/
+.caution {
+    width: 100%;
+}
+.caution img {
+    width: 100%;
+}
+
+/***********************
+   Store
+ ***********************/
+.store {
+    margin: 5px 0;
+}
+
+.store .store-img {
+    width: 70px;
+    height: 70px;
+}
+.store .store-img img {
+    width: 100%;
+}
+
+.store .store-desc {
+    width: calc(80% - 70px);
+    margin: 0;
+    height: 70px;
+    position: relative;
+}
+.store .store-desc h3 {
+    font-size: 12px;
+    padding: 0 0 0 3px;
+    margin: 1px 0;
+    position: relative;
+    z-index: 100;
+}
+.store .store-desc p {
+    font-size: 10px;
+    padding: 0 0 0 6px;
+    margin: 1px 0;
+    position: relative;
+    z-index: 100;
+}
+.store .store-desc div.gauge {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #ffc0cd;
+    height: 70px;
+    width: calc(80% - 70px);
+    z-index: 10;
+}
+
+.store .store-oiri {
+    width: 20%;
+}
+.store .store-oiri img {
+    /*width: 90%;*/
+    height: 50px;
+    padding: 0;
+    margin: 0 auto;
+}
+.store .store-oiri p {
+    height: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 0;
+    background-color: #f01100;
+    color: #ffffff;
+    font-weight: bold;
+    margin: -4px auto 0 auto;
+    text-align: center;
+    width: 35px;
+}
+
+
+.store-balloon {
+    position: relative;
+    display: inline-block;
+    padding: 0 15px;
+    width: calc(100% - 40px);
+    height: auto;
+    color: #555555;
+    line-height: 20px;
+    text-align: left;
+    background: #ffffff;
+    border: 1px solid #BBE1E8;
+    border-radius: 50px;
+    z-index: 0;
+    font-size: 12px;
+    margin: 3px;
+}
+.store-balloon:before {
+	content: "";
+	position: absolute;
+	top: -17px; left: 15px;
+	margin-right: 0;
+	display: block;
+	width: 10px;
+	height: 10px;
+    background: #ffffff;
+	border: 1px solid #BBE1E8;
+	border-radius: 50%;
+	z-index: -1;
+}
+.store-balloon:after {
+	content: "";
+	position: absolute;
+	top: -25px; left: 25px;
+	margin-right: 0;
+	display: block;
+	width: 5px;
+	height: 5px;
+    background: #ffffff;
+	border: 1px solid #BBE1E8;
+	border-radius: 50%;
+	z-index: -1;
 }
