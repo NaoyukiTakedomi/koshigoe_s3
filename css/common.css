@@ -74,9 +74,24 @@ div.wrapper {
     margin: 10px auto 0 auto;
 }
 .footer p {
+    vertical-align: middle;
     font-size: 12px;
     padding: 0 0 10px 0;
     margin: 0;
+}
+.footer img {
+    height: 20px;
+    padding: 0 5px;
+}
+.footer img.kyosan {
+    padding: 0 10px 0 5px;
+}
+.footer span {
+    padding: 0 5px;
+}
+.footer span.member {
+    padding: 0 3px;
+    font-size: 80%;
 }
 
 .tweet {
@@ -180,6 +195,7 @@ table.list td {
     margin: 10px auto;
 }
 .admin-message h2{
+    width: calc(50% - 10px);
     padding: 0px;
     margin: 0 5px;
     font-size: 12px;
@@ -190,6 +206,10 @@ table.list td {
     margin: 0 2px 0 5px;
     font-size: 12px;
     color: #333;
+}
+.admin-message .koshitter {
+    /*height: 40px;*/
+    width: 50%;
 }
 .admin-message .admin-avator {
     width: 40px;
@@ -258,7 +278,11 @@ table.list td {
     display: table-cell;
     vertical-align: middle;
 }
-
+@media screen and (min-width:700px) {
+    .storelist-btn div {
+        font-size: 45.5px;
+    }
+}
 /***********************
    Map
  ***********************/
