@@ -21,6 +21,7 @@
 
     <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="./js/common.js"></script>
+    <script type="text/javascript" src="./js/gapi.js"></script>
 
 </head>
 
@@ -52,6 +53,8 @@
 
             <div class="inner-section">
                 <h2>店舗一覧</h2>
+
+                <div id="store_list">
 
                 <div class="store clearfix">
                     <div class="store-img left">
@@ -250,5 +253,13 @@
         </div>
     </div>
 </body>
+
+<script>
+$(function(){
+    var test = new Gapi('1hiEFK5SNpMUndJsFOuDBvZVS42VRYOttBC0WtrI8g1o', 'od6');
+
+    test.getJson();
+});
+</script>
 
 </html>
