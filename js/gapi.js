@@ -48,7 +48,7 @@ var Gapi = function(key, wid){
         return categorized;
     }
     function renderForm(categorized){ // レンダリング用の関数
-        var target = $('.formSubmit');
+        var target = $('.results');
         categorized.forEach(function(areaCats){
             target.before('<h2>'+areaCats[0].gs$cell.$t+'</h2>');
             target.before('<dl>');
@@ -60,3 +60,5 @@ var Gapi = function(key, wid){
         });
     }
 }());
+
+
