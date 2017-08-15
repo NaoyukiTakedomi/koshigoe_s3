@@ -15,7 +15,7 @@
 div.inner {
     margin: 0 auto;
     width: 90%;
-    max-width: 600px;
+    max-width: 425px;
     background-color: #ffffff;
 }
 
@@ -316,7 +316,9 @@ table.list td {
     height: 70px;
 }
 .store .store-img img {
-    width: 100%;
+    /*width: 100%;*/
+    width: 70px;
+    height: 70px;
 }
 
 .store .store-desc {

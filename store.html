@@ -49,42 +49,12 @@
                     <a href="https://twitter.com/intent/tweet?button_hashtag=%E8%85%B0%E8%B6%8A%E3%81%B6%E3%82%89%E3%82%8A%E5%91%91%E3%81%BF%E6%AD%A9%E3%81%8D%E3%81%AE%E6%97%A5&abc" class="twitter-hashtag-button" data-lang="ja">Tweet #%E8%85%B0%E8%B6%8A%E3%81%B6%E3%82%89%E3%82%8A%E5%91%91%E3%81%BF%E6%AD%A9%E3%81%8D%E3%81%AE%E6%97%A5</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                 </div>
             </div>
-            <div class="tests"></div>
-
-            <script>
-
-            // ID of the Google Spreadsheet
-            var spreadsheetID = "1hiEFK5SNpMUndJsFOuDBvZVS42VRYOttBC0WtrI8g1o";
-
-            // Make sure it is public or set to Anyone with link can view
-            var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json";
-
-            $.getJSON(url, function(data) {
-
-                var entry = data.feed.entry;
-
-                $(entry).each(function(){
-                // Column names are name, age, etc.
-                $('.tests').append('<img>')
-                $('.tests').append('<h3>'+this.gsx$店舗名.$t+'</h3>');
-                $('.tests').append('<p class="eat">'+this.gsx$メニュー1.$t+'</p>');
-                $('.tests').append('<p class="drink">'+this.gsx$メニュー2.$t+'</p>');
-                if (this.gsx$開店時間2.$t != "" && this.gsx$閉店時間2.$t != "") {
-                    $('.tests').append('<p class="time">'+this.gsx$開店時間.$t+'-'+this.gsx$閉店時間.$t+', '+this.gsx$開店時間2.$t+'-'+this.gsx$閉店時間2.$t+'</p>');
-                } else {
-                    $('.tests').append('<p class="time">'+this.gsx$開店時間.$t+'-'+this.gsx$閉店時間.$t+'</p>');
-                }
-                });
-
-            });
-
-            </script>
 
             <div class="inner-section">
                 <h2>店舗一覧</h2>
 
                 <div id="store_list">
-
+<!--
                     <div class="store clearfix">
                         <div class="store-img left">
                             <img src="./img/menu/menu_1.jpg">
@@ -119,59 +89,6 @@
                             <p>6</p>
                         </div>
                     </div>
-
-                    <div class="store clearfix">
-                        <div class="store-img left">
-                            <img src="./img/menu/menu_1.jpg">
-                        </div>
-                        <div class="store-desc left">
-                            <h3>鎌倉 大勝軒</h3>
-                            <p class="eat">めんまチャーシュー</p>
-                            <p class="drink">生ビール・瓶ビール</p>
-                            <p class="time">10:00-14:00, 17:00-20:00</p>
-                            <div class="gauge" style="width:50px"></div>
-                        </div>
-                        <div class="store-oiri left">
-                            <img src="./img/oiri.png">
-                            <p>5</p>
-                        </div>
-                    </div>
-
-                    <div class="store clearfix">
-                        <div class="store-img left">
-                            <img src="./img/menu/menu_1.jpg">
-                        </div>
-                        <div class="store-desc left">
-                            <h3>鎌倉 大勝軒</h3>
-                            <p class="eat">めんまチャーシュー</p>
-                            <p class="drink">生ビール・瓶ビール</p>
-                            <p class="time">10:00-14:00, 17:00-20:00</p>
-                            <div class="gauge" style="width:20px"></div>
-                        </div>
-                        <div class="store-oiri left">
-                            <img src="./img/oiri.png">
-                            <p>2</p>
-                        </div>
-                        <div class="store-balloon">チャーシュー完売につき、特別メニュー提供中</div>
-                    </div>
-
-                    <div class="store clearfix">
-                        <div class="store-img left">
-                            <img src="./img/menu/menu_1.jpg">
-                        </div>
-                        <div class="store-desc left">
-                            <h3>鎌倉 大勝軒</h3>
-                            <p class="eat">めんまチャーシュー</p>
-                            <p class="drink">生ビール・瓶ビール</p>
-                            <p class="time">10:00-14:00, 17:00-20:00</p>
-                            <div class="gauge" style="width:10px"></div>
-                        </div>
-                        <div class="store-oiri left">
-                            <img src="./img/oiri.png">
-                            <p>1</p>
-                        </div>
-                    </div>
-
                     <div class="store clearfix">
                         <div class="store-img left">
                             <img src="./img/menu/menu_1.jpg">
@@ -189,8 +106,8 @@
                         </div>
                         <div class="store-balloon">竹細工ワークショップ 受付中！</div>
                     </div>
+                -->
                 </div>
-
             </div>
 
             <div class="inner-section">
@@ -286,11 +203,60 @@
 </body>
 
 <script>
-$(function(){
-    var test = new Gapi('1hiEFK5SNpMUndJsFOuDBvZVS42VRYOttBC0WtrI8g1o', 'od6');
+// $(function(){
+//     var test = new Gapi('1hiEFK5SNpMUndJsFOuDBvZVS42VRYOttBC0WtrI8g1o', 'od6');
+//
+//     test.getJson();
+// });
+</script>
+<script>
 
-    test.getJson();
+// ID of the Google Spreadsheet
+var spreadsheetID = "1hiEFK5SNpMUndJsFOuDBvZVS42VRYOttBC0WtrI8g1o";
+
+// Make sure it is public or set to Anyone with link can view
+var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json";
+
+$.getJSON(url, function(data) {
+
+    var entry = data.feed.entry;
+    // console.log(entry);
+
+    $(entry).each(function(){
+        var gauge = 0;
+        if (isNaN(this.gsx$大入.$t) === false) {
+            gauge = this.gsx$大入.$t / 15 * 100;
+            if (gauge > 100) { gauge = 100; }
+        }
+
+        // Column names are name, age, etc.
+        var html = '<div class="store clearfix"><div class="store-img left">';
+        if (this.gsx$メニュー画像.$t != "") {
+            html += '<img src="' + this.gsx$メニュー画像.$t + '">';
+        } else {
+            html += '<img src="./img/menu/dummy.jpg">';
+        }
+        html += '</div><div class="store-desc left">';
+        html += '<h3>' + this.gsx$店舗名.$t + '</h3>';
+        html += '<p class="eat">'+this.gsx$メニュー1.$t+'</p>';
+        html += '<p class="drink">'+this.gsx$メニュー2.$t+'</p>';
+        if (this.gsx$開店時間2.$t != "" && this.gsx$閉店時間2.$t != "") {
+            html += '<p class="time">'+this.gsx$開店時間.$t+'-'+this.gsx$閉店時間.$t+', '+this.gsx$開店時間2.$t+'-'+this.gsx$閉店時間2.$t+'</p>';
+        } else {
+            html += '<p class="time">'+this.gsx$開店時間.$t+'-'+this.gsx$閉店時間.$t+'</p>';
+        }
+        html += '<div class="gauge" style="width:' + gauge + '%"></div>';
+        html += '</div>';
+        html += '<div class="store-oiri left"><img src="./img/oiri.png"><p>' + this.gsx$大入.$t + '</p></div>';
+        if (this.gsx$状況.$t != "") {
+            html += '<div class="store-balloon">' + this.gsx$状況.$t + '</div>';
+        }
+        html += '</div>';
+        $('#store_list').append(html);
+    });
+
 });
+
 </script>
 
 </html>
