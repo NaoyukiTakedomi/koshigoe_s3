@@ -13,11 +13,12 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://koshigoe.buranomi.fun/index.html" />
     <meta property="og:site_name" content="腰越ぶらり呑み歩きの日">
-    <meta property="og:image" content="http://koshigoe.buranomi.fun/img/top.jpg" />
+    <meta property="og:image" content="http://koshigoe.buranomi.fun/img/logo/logo_sq.jpg" />
     <meta property="fb:app_id" content="482468892114789">
 
     <link rel="icon" type="image/x-icon" href="http://magobay.jp/favicon.ico" />
     <link type="text/css" rel="stylesheet" id="common_css" media="all" href="./css/common.css" charset="utf-8" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="./js/common.js"></script>
@@ -31,7 +32,8 @@
                 <a class="left logo" href="./index.html">
                     <h1><img src="./img/logo/logo.jpg" alt="腰越ぶらり呑み歩きの日"></h1>
                 </a>
-                <a id="contact" class="right header-icon" href="" target="_blank">
+                <a id="" class="right header-icon" href="http://magobay.jp/contact" target="_blank">
+                    <img src="./img/icon/mail.png" alt="Contact" title="Contact">
                 </a>
                 <a class="right header-icon" href="http://yooying.com/koshigoe_buranomi" target="_blank">
                     <img src="./img/icon/instagram.png" alt="Koshistagram" title="Official Instagram">
@@ -51,35 +53,29 @@
             </div>
 
             <div class="inner-section">
-                <h2>店舗一覧</h2>
+                <h2 class="accordion active store">店舗一覧</h2>
 
-                <div id="store_list"></div>
+                <div id="store_list" class="accordion_item"></div>
             </div>
 
             <div class="inner-section">
-                <h2>周辺スポット一覧</h2>
+                <h2 class="accordion active">周辺スポット一覧</h2>
 
-                <div id="arround_list"></div>
+                <div id="arround_list" class="accordion_item"></div>
             </div>
 
             <div class="inner-section">
-                <h2>キミコエスポット一覧</h2>
+                <h2 class="accordion active">映画『きみの声をとどけたい』スポット一覧</h2>
+                <!-- <h2 class="accordion active">映画<img src="./img/logo/kimikoe.jpg"><br>スポット一覧</h2> -->
 
-                <div id="kimikoe_list"></div>
-            </div>
-
-            <!-- Twitter -->
-            <div class="inner-section twitter">
-                <img src="./img/logo/koshitter.jpg">
-                <a class="twitter-timeline"  href="https://twitter.com/hashtag/%E8%85%B0%E8%B6%8A" data-widget-id="893012606390161409">#腰越 のツイート</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                <div id="kimikoe_list" class="accordion_item"></div>
             </div>
 
             <div class="inner-section footer">
                 <hr>
-                <p>主催：腰越ぶらり呑み歩き実行委員会</p>
-                <p>協賛：<img class="kyosan" src="./img/logo/enoden.png"><img class="kyosan" src="./img/logo/monorail.jpg"><span>腰越協栄会</span></p>
-                <p>協力：<img src="./img/logo/itbu3.jpg" alt="古賀一樹,中丸潤,武富直之,谷口耕平,加納太玄" title="古賀一樹,中丸潤,武富直之,谷口耕平,加納太玄"></p>
+                <p class="syusai">主催：腰越ぶらり呑み歩き実行委員会</p>
+                <p class="kyosan">協賛：<img src="./img/logo/enoden.png"><img src="./img/logo/monorail.jpg"><br><span>腰越協栄会</span></p>
+                <p class="kyoryoku">協力：<img src="./img/logo/itbu3.jpg" alt="古賀一樹,中丸潤,武富直之,谷口耕平,加納太玄" title="古賀一樹,中丸潤,武富直之,谷口耕平,加納太玄"></p>
             </div>
 
         </div>
@@ -88,6 +84,26 @@
 
 <script>
 $(function(){
+    $('.accordion').on('click', function(){
+        $(this).next().slideToggle();
+        if ($(this).hasClass('active')) {
+			// activeを削除
+			$(this).removeClass('active');
+		}
+		else {
+			// activeを追加
+			$(this).addClass('active');
+		}
+        if ($(this).children(".accordion_item").hasClass('active')) {
+			// activeを削除
+			$(this).children(".accordion_item").removeClass('active');
+		}
+		else {
+			// activeを追加
+			$(this).children(".accordion_item").addClass('active');
+		}
+    });
+
     function isOpen(arr) {
         var result = false;
         var date = new Date();
@@ -147,7 +163,7 @@ $(function(){
                 if (this.gsx$メニュー画像.$t != "") {
                     html += '<img src="' + this.gsx$メニュー画像.$t + '">';
                 } else {
-                    html += '<img src="./img/menu/dummy.jpg">';
+                    html += '<img src="./img/menu/dummy.png">';
                 }
                 if (this.gsx$link.$t != "") {
                     html += '</a>';
@@ -210,6 +226,16 @@ $(function(){
 
     renderStoreList();
 });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76661214-3', 'auto');
+  ga('send', 'pageview');
+
 </script>
 
 </html>

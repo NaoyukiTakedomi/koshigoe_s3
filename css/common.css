@@ -79,14 +79,18 @@ div.wrapper {
     padding: 0 0 10px 0;
     margin: 0;
 }
+.footer p.kyosan {
+    padding-left: 3em;
+    text-indent: -3em;
+}
 .footer img {
     height: 20px;
     padding: 0 5px;
 }
-.footer img.kyosan {
+.footer .kyosan img {
     padding: 0 10px 0 5px;
 }
-.footer span {
+.footer .kyosan span {
     padding: 0 5px;
 }
 .footer span.member {
@@ -415,4 +419,34 @@ table.list td {
 	border: 1px solid #BBE1E8;
 	border-radius: 50%;
 	z-index: -1;
+}
+
+h2.accordion {
+    border-top: solid 3px #BBE1E8;
+    border-bottom: solid 3px #BBE1E8;
+    color: #202020;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 5px 10px 5px 2em;
+    text-indent: -1em;
+    transition: all 300ms 0s ease;
+}
+h2.accordion.active {
+    border-bottom: solid 1px #BBE1E8;
+}
+h2.accordion::before {
+    content: '\f101';
+    font-family: 'FontAwesome';
+    padding-right: 8px;
+    color: #BBE1E8;
+}
+h2.accordion.active::before {
+    content: '\f103';
+    padding-right: 7px;
+}
+h2.accordion img {
+    height: 15px;
+}
+div.accordion_item {
+    border-bottom: solid 3px #BBE1E8;
 }
