@@ -199,11 +199,11 @@ table.list td {
     margin: 10px auto;
 }
 .admin-message h2{
-    width: calc(50% - 10px);
-    padding: 0px;
+    padding: -3px 0 0 0;
     margin: 0 5px;
     font-size: 12px;
     color: #777;
+    font-weight: normal;
 }
 .admin-message p{
     padding: 0px;
@@ -212,8 +212,8 @@ table.list td {
     color: #333;
 }
 .admin-message .koshitter {
-    /*height: 40px;*/
-    width: 50%;
+    height: 30px;
+    padding-left: 6px;
 }
 .admin-message .admin-avator {
     width: 40px;
@@ -308,6 +308,10 @@ table.list td {
     width: 100%;
 }
 
+.section-image {
+    height: 20px;
+}
+
 /***********************
    Store
  ***********************/
@@ -359,7 +363,7 @@ table.list td {
     width: 20%;
 }
 .store .store-oiri img {
-    /*width: 90%;*/
+    width: 50px;
     height: 50px;
     padding: 0;
     margin: 0 auto;
@@ -367,14 +371,14 @@ table.list td {
 .store .store-oiri p {
     height: 14px;
     font-size: 12px;
+    width: 50px;
     line-height: 14px;
     padding: 0;
-    background-color: #f01100;
-    color: #ffffff;
+    color: #f01100;
     font-weight: bold;
-    margin: -4px auto 0 auto;
+    font-family: "arial";
     text-align: center;
-    width: 35px;
+    margin-top: -4px;
 }
 
 
