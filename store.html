@@ -20,11 +20,13 @@
 
     <link rel="icon" type="image/x-icon" href="http://magobay.jp/favicon.ico" />
     <link type="text/css" rel="stylesheet" id="common_css" media="all" href="./css/common.css" charset="utf-8" />
+    <link type="text/css" rel="stylesheet" id="common_css" media="all" href="./css/modal.css" charset="utf-8" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="./js/common.js"></script>
     <script type="text/javascript" src="./js/gapi.js"></script>
+    <script type="text/javascript" src="./js/store.js"></script>
 </head>
 
 <body>
@@ -50,7 +52,10 @@
             </div>
             <div class="clearfix">
                 <div class="tweet">
-                    <a href="https://twitter.com/intent/tweet?button_hashtag=%E8%85%B0%E8%B6%8A%E3%81%B6%E3%82%89%E3%82%8A%E5%91%91%E3%81%BF%E6%AD%A9%E3%81%8D%E3%81%AE%E6%97%A5&abc" class="twitter-hashtag-button" data-lang="ja">Tweet #%E8%85%B0%E8%B6%8A%E3%81%B6%E3%82%89%E3%82%8A%E5%91%91%E3%81%BF%E6%AD%A9%E3%81%8D%E3%81%AE%E6%97%A5</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                    <a href="https://twitter.com/intent/tweet?button_hashtag=%E8%85%B0%E8%B6%8A%E3%81%B6%E3%82%89%E3%82%8A%E5%91%91%E3%81%BF%E6%AD%A9%E3%81%8D%E3%81%AE%E6%97%A5&abc" class="twitter-hashtag-button" data-lang="ja">
+                        <!-- Tweet #%E8%85%B0%E8%B6%8A%E3%81%B6%E3%82%89%E3%82%8A%E5%91%91%E3%81%BF%E6%AD%A9%E3%81%8D%E3%81%AE%E6%97%A5 -->
+                    </a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                 </div>
             </div>
 
@@ -84,151 +89,6 @@
     </div>
 </body>
 
-<script>
-$(function(){
-    $('.accordion').on('click', function(){
-        $(this).next().slideToggle();
-        if ($(this).hasClass('active')) {
-			// activeを削除
-			$(this).removeClass('active');
-		}
-		else {
-			// activeを追加
-			$(this).addClass('active');
-		}
-        if ($(this).children(".accordion_item").hasClass('active')) {
-			// activeを削除
-			$(this).children(".accordion_item").removeClass('active');
-		}
-		else {
-			// activeを追加
-			$(this).children(".accordion_item").addClass('active');
-		}
-    });
-
-    function isOpen(arr) {
-        var result = false;
-        var date = new Date();
-        var now = date.getHours()*100 + date.getMinutes();
-        arr.forEach(function(time){
-            var open = time['open'].replace(':', '');
-            var close = time['close'].replace(':', '');
-
-            if (open <= now && now <= close) {
-                result = true;
-            }
-        });
-        return result;
-    }
-
-    function renderStoreList() {
-        // ID of the Google Spreadsheet
-        var spreadsheetID = "1hiEFK5SNpMUndJsFOuDBvZVS42VRYOttBC0WtrI8g1o";
-
-        // Make sure it is public or set to Anyone with link can view
-        var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json";
-
-        $.getJSON(url, function(data) {
-
-            var entry = data.feed.entry;
-            // console.log(entry);
-
-            $(entry).each(function(){
-                var gauge = 0;
-                if (isNaN(this.gsx$大入.$t) === false) {
-                    gauge = this.gsx$大入.$t / 15 * 100;
-                    if (gauge > 100) { gauge = 100; }
-                }
-                var available = new Array();
-                if (this.gsx$開店時間.$t != "" && this.gsx$閉店時間.$t != "") {
-                    var temp = new Array();
-                    temp['open'] = this.gsx$開店時間.$t;
-                    temp['close'] = this.gsx$閉店時間.$t;
-                    available.push(temp);
-                }
-                if (this.gsx$開店時間2.$t != "" && this.gsx$閉店時間2.$t != "") {
-                    var temp = new Array();
-                    temp['open'] = this.gsx$開店時間2.$t;
-                    temp['close'] = this.gsx$閉店時間2.$t;
-                    available.push(temp);
-                }
-                var open = isOpen(available);
-                if (this.gsx$強制閉店フラグ.$t != "" && this.gsx$強制閉店フラグ.$t != "0") {
-                    open = false;
-                }
-
-                // Column names are name, age, etc.
-                var html = '<div class="store clearfix"><div class="store-img left">';
-                if (this.gsx$link.$t != "") {
-                    html += '<a href="' + this.gsx$link.$t + '" target="_blank">';
-                }
-                if (this.gsx$メニュー画像.$t != "") {
-                    html += '<img src="' + this.gsx$メニュー画像.$t + '">';
-                } else {
-                    html += '<img src="./img/menu/dummy.png">';
-                }
-                if (this.gsx$link.$t != "") {
-                    html += '</a>';
-                }
-                html += '</div><div class="store-desc left">';
-                html += '<h3>' + this.gsx$店舗名.$t + '</h3>';
-                html += '<p class="eat">'+this.gsx$メニュー1.$t+'</p>';
-                html += '<p class="drink">'+this.gsx$メニュー2.$t+'</p>';
-                if (this.gsx$開店時間2.$t != "" && this.gsx$閉店時間2.$t != "") {
-                    html += '<p class="time">'+this.gsx$開店時間.$t+'-'+this.gsx$閉店時間.$t+', '+this.gsx$開店時間2.$t+'-'+this.gsx$閉店時間2.$t+'</p>';
-                } else {
-                    html += '<p class="time">'+this.gsx$開店時間.$t+'-'+this.gsx$閉店時間.$t+'</p>';
-                }
-                html += '<div class="gauge" style="width:' + gauge + '%"></div>';
-                html += '</div>';
-                if (open) {
-                    if (this.gsx$カテゴリ.$t == "店舗") {
-                        html += '<div class="store-oiri left" id="oiri__' + this.gsx$店番号.$t + '" data-id="' + this.gsx$店番号.$t + '"><a href="https://goo.gl/forms/Zno7cBhwtmJf5ien1"><img src="./img/oiri.png"></a><p>' + this.gsx$大入.$t + '</p></div>';
-                        // html += '<div class="store-oiri left" id="oiri__1" data-id="1"><img src="./img/oiri.png"><p>' + this.gsx$大入.$t + '</p></div>';
-                    }
-                } else {
-                    html += '<div class="store-oiri left"><img src="./img/close.png"></div>';
-                }
-                if (this.gsx$状況.$t != "") {
-                    html += '<div class="store-balloon">' + this.gsx$状況.$t + '</div>';
-                }
-                html += '</div>';
-
-                if (this.gsx$カテゴリ.$t == "店舗") {
-                    $('#store_list').append(html);
-                } else if (this.gsx$カテゴリ.$t == "周辺") {
-                    $('#arround_list').append(html);
-                } else {
-                    $('#kimikoe_list').append(html);
-                }
-
-            });
-            update();
-        });
-    }
-
-    function update() {
-        $('[id^=oiri__]').on('click',function(){
-            var sid = $(this).data("id");
-            var ua = window.navigator.userAgent.toLowerCase();
-            var status = 0; // 固定
-            // $.ajax({
-            //     type: "POST",
-            //     url:  "https://script.google.com/macros/s/AKfycbyZ84mVdORm3TxjtWpsAN31Ep3Wmwf_rL8g2hTwvkXa3gjiGSsj/exec",
-            //     mimeType: 'text/javascript',
-            //     contentType: "application/json; charset=UTF-8",
-            //     dataType: 'jsonp',
-            //     data: { store_id: sid, user_agent: ua, status: status}
-            // }).done(function( msg ) {
-            //     console.log(msg);
-            //     console.log('done!');
-            // });
-        });
-    }
-
-    renderStoreList();
-});
-</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

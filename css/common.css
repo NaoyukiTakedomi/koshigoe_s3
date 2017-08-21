@@ -56,13 +56,11 @@ div.wrapper {
     background-color: #FFFFFF;
 }
 .header .logo {
-    height: 5opx;
-    /*width: 30%;*/
+    height: 50px;
     margin: auto 0;
 }
 .header .logo img {
     height: 50px;
-    /*width: 100%;*/
 }
 
 .header .header-icon img {
