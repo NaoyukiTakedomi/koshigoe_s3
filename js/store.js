@@ -50,8 +50,6 @@ $(function(){
             $(entry).each(function(){
                 var available = new Array();
                 var oiri_form_link = oiri_form_prefix + encodeURIComponent(this.gsx$店舗名.$t);
-                console.log(this.gsx$店舗名.$t);
-                console.log(oiri_form_link);
 
                 if (this.gsx$開店時間.$t != "" && this.gsx$閉店時間.$t != "") {
                     var temp = new Array();
@@ -168,7 +166,6 @@ $(function(){
 
         //テキストリンクをクリックしたら
         $(".modal-open").click(function(){
-            console.log(this);
             //body内の最後に<div id="modal-bg"></div>を挿入
             $("body").append('<div id="modal-bg"></div>');
 
