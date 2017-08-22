@@ -67,7 +67,6 @@ $(function(){
                 if (this.gsx$強制閉店フラグ.$t != "" && this.gsx$強制閉店フラグ.$t != "0") {
                     open = false;
                 }
-                open=true;
 
                 var gauge = 0;
                 if (isNaN(this.gsx$大入.$t) === false && open) {
@@ -103,7 +102,7 @@ $(function(){
                 html += '</div>';
                 if (open) {
                     if (this.gsx$カテゴリ.$t == "店舗") {
-                        html += '<div class="store-oiri left" id="oiri__' + this.gsx$店番号.$t + '" data-id="' + this.gsx$店番号.$t + '"><a href="' + oiri_form_link + '" target="_blank"><img src="./img/oiri.png"></a><p>' + this.gsx$大入.$t + '</p></div>';
+                        html += '<div class="store-oiri left" id="oiri__' + this.gsx$店番号.$t + '" data-id="' + this.gsx$店番号.$t + '"><a href="' + oiri_form_link + '" target="_self"><img src="./img/oiri.png"></a><p>' + this.gsx$大入.$t + '</p></div>';
                     }
                 } else {
                     html += '<div class="store-oiri left"><img src="./img/close.png"></div>';
@@ -129,41 +128,25 @@ $(function(){
     function update() {
         console.log("update");
         $('[id^=oiri__]').on('click',function(){
-            var sid = $(this).data("id");
-            var ua = window.navigator.userAgent.toLowerCase();
-            var status = 0; // 固定
-            $.ajax({
-                url: "https://docs.google.com/forms/d/1hiEFK5SNpMUndJsFOuDBvZVS42VRYOttBC0WtrI8g1o/formResponse",
-                data: { store_id: sid, user_agent: ua, status: status},
-                type: "POST",
-                dataType: "xml",
-                statusCode: {
-                    0: function() {
-                        //Success message
-                    },
-                    200: function() {
-                        //Success Message
-                    }
-                }
-            });
+            // var sid = $(this).data("id");
+            // var ua = window.navigator.userAgent.toLowerCase();
+            // var status = 0; // 固定
             // $.ajax({
-            //     type: "GET",//"POST",
-            //     url: "https://script.google.com/macros/s/AKfycbxgRJNl1ZOCuHpRtnNQ4FZSwXi_U2-jEANizL0E_oMBvqzZm8mC/exec",
-            //     // url:  "https://script.google.com/macros/s/AKfycbyZ84mVdORm3TxjtWpsAN31Ep3Wmwf_rL8g2hTwvkXa3gjiGSsj/exec",
-            //     mimeType: 'text/javascript',
-            //     contentType: "application/json; charset=UTF-8",
-            //     dataType: 'jsonp',
-            //     beforeSend: function (xhr) {
-            //       xhr.setRequestHeader('Access-Control-Allow-Origin', 'chrome-extension://EXTENSION_ID');
-            //       xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT');
-            //     },
-            //     data: { store_id: sid, user_agent: ua, status: status}
-            // }).done(function( msg ) {
-            //     console.log(msg);
-            //     console.log('done!');
+            //     url: "https://docs.google.com/forms/d/1hiEFK5SNpMUndJsFOuDBvZVS42VRYOttBC0WtrI8g1o/formResponse",
+            //     data: { store_id: sid, user_agent: ua, status: status},
+            //     type: "POST",
+            //     dataType: "xml",
+            //     statusCode: {
+            //         0: function() {
+            //             //Success message
+            //         },
+            //         200: function() {
+            //             //Success Message
+            //         }
+            //     }
             // });
         });
-
+        /*
         //テキストリンクをクリックしたら
         $(".modal-open").click(function(){
             //body内の最後に<div id="modal-bg"></div>を挿入
@@ -201,7 +184,7 @@ $(function(){
                 });
             }
         });
+        */
     }
-
     renderStoreList();
 });
