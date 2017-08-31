@@ -1,4 +1,6 @@
 $(function(){
+    <!--
+
     $('.accordion').on('click', function(){
         $(this).next().slideToggle();
         if ($(this).hasClass('active')) {
@@ -34,6 +36,49 @@ $(function(){
         return result;
     }
 
+    function clearOiriComment() {
+        $('#oiri_list').empty();
+    }
+
+    function getOiriComment() {
+        // ID of the Google Spreadsheet
+        var spreadsheetID = "1hiEFK5SNpMUndJsFOuDBvZVS42VRYOttBC0WtrI8g1o";
+
+        // Make sure it is public or set to Anyone with link can view
+        var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/or594f6/public/values?alt=json";
+
+        $.getJSON(url, function(data) {
+            var entry = data.feed.entry;
+            entry.reverse();
+
+            $(entry).each(function(){
+                if (this.gsx$お店の名前.$t != "" && this.gsx$タイムスタンプ.$t != "" && this.gsx$混雑状況は.$t != "") {
+                    var html = '<div class="oiri-log">';
+
+                    var _time = this.gsx$タイムスタンプ.$t;
+                    var _ta = _time.match(/^(\d+)\/(\d+)\/(\d+) (\d+):(\d+):(\d+)$/);
+                    var time = ('00' + _ta[4]).slice(-2) + ':' + _ta[5];
+                    var name = this.gsx$お店の名前.$t;
+                    var message = this.gsx$混雑状況は.$t;
+
+                    html += '<p><span class="name">' + name + '</span><span class="time">' + time + '</span>';
+                    html += '<p class="message">' + message + '</p></p>';
+
+                    html += '</div>';
+                    $('#oiri_list').append(html);
+                }
+            });
+        });
+    }
+
+    function sortStoreList(list) {
+        var open = [];
+        var close = [];
+        $(list).each(function(){
+            console.log(this);
+        });
+    }
+
     function renderStoreList() {
         // ID of the Google Spreadsheet
         var spreadsheetID = "1hiEFK5SNpMUndJsFOuDBvZVS42VRYOttBC0WtrI8g1o";
@@ -45,7 +90,7 @@ $(function(){
         $.getJSON(url, function(data) {
 
             var entry = data.feed.entry;
-            // console.log(entry);
+            sortStoreList(entry);
 
             $(entry).each(function(){
                 var available = new Array();
@@ -126,7 +171,6 @@ $(function(){
     }
 
     function update() {
-        console.log("update");
         $('[id^=oiri__]').on('click',function(){
             // var sid = $(this).data("id");
             // var ua = window.navigator.userAgent.toLowerCase();
@@ -187,4 +231,7 @@ $(function(){
         */
     }
     renderStoreList();
+    getOiriComment();
+
+    //-->
 });

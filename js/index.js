@@ -1,4 +1,5 @@
 $(function(){
+    <!--
 
     function init() {
         var count = 0;
@@ -26,4 +27,5 @@ $(function(){
 
     init();
 
+    //-->
 });
