@@ -338,14 +338,14 @@ table.list td {
     padding: 0 0 0 3px;
     margin: 1px 0;
     position: relative;
-    z-index: 100;
+    z-index: 10;
 }
 .store .store-desc p {
     font-size: 10px;
     padding: 0 0 0 6px;
     margin: 1px 0;
     position: relative;
-    z-index: 100;
+    z-index: 10;
 }
 .store .store-desc div.gauge {
     position: absolute;
@@ -354,7 +354,7 @@ table.list td {
     background-color: #ffc0cd;
     height: 70px;
     width: calc(80% - 70px);
-    z-index: 10;
+    z-index: 5;
 }
 
 .store .store-oiri {
@@ -456,8 +456,26 @@ div.accordion_item {
 /********************************
  * Oiri log
  ********************************/
+.koshibura {
+    position: relative;
+}
+.koshibura h2.live {
+    position: absolute;
+    right: 0;
+    top: 0;
+    -moz-transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
+    color: #b22;
+    padding: 3px;
+    display: none;
+}
+
+
 #oiri_list {
-    max-height: 8em;
+    max-height: 12em;
     overflow: scroll;
     background-color: #fff0f0;
     padding: 0 5px;
@@ -471,6 +489,7 @@ div.accordion_item {
 }
 .oiri-log p {
     margin: 0;
+    word-wrap: break-word;
 }
 .oiri-log .name {
     border-left: solid 10px #b22;
@@ -481,13 +500,4 @@ div.accordion_item {
 }
 .oiri-log .time {
     margin-left: 10px;
-}
-h2.live {
-    border-left: solid 1px #b22;
-    border-right: solid 5px #b22;
-    background-color: #fff0f0;
-    text-align: right;
-    font-size: 80%;
-    color: #b22;
-    padding: 0 5px;
 }

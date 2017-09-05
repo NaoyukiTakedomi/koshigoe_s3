@@ -1,5 +1,6 @@
 $(function(){
     <!--
+    g_stores = "";
 
     $('.accordion').on('click', function(){
         $(this).next().slideToggle();
@@ -68,6 +69,10 @@ $(function(){
                     $('#oiri_list').append(html);
                 }
             });
+
+            $(".live").fadeIn("fast");
+            $(".live").fadeOut("fast");
+            $(".live").fadeIn("fast");
         });
     }
 
@@ -75,7 +80,7 @@ $(function(){
         var open = [];
         var close = [];
         $(list).each(function(){
-            console.log(this);
+            // console.log(this);
         });
     }
 
@@ -90,6 +95,7 @@ $(function(){
         $.getJSON(url, function(data) {
 
             var entry = data.feed.entry;
+            g_stores = entry;
             sortStoreList(entry);
 
             $(entry).each(function(){
@@ -127,12 +133,12 @@ $(function(){
                 if (this.gsx$メニュー画像.$t != "") {
                     html += '<img src="' + this.gsx$メニュー画像.$t + '">';
                 } else {
-                    html += '<img class="modal-open" src="./img/menu/dummy.png">';
+                    html += '<img class="modal-open" src="./img/menu/dummy.png" data-id="' + this.gsx$店番号.$t + '">';
                 }
                 if (this.gsx$link.$t != "") {
                     html += '</a>';
                 }
-                html += '</div><div class="store-desc left">';
+                html += '</div><div class="store-desc modal-open left" data-id="' + this.gsx$店番号.$t + '">';
                 html += '<h3>' + this.gsx$店舗名.$t + '</h3>';
                 html += '<p class="eat">'+this.gsx$メニュー1.$t+'</p>';
                 html += '<p class="drink">'+this.gsx$メニュー2.$t+'</p>';
@@ -190,11 +196,45 @@ $(function(){
             //     }
             // });
         });
-        /*
+        /**/
         //テキストリンクをクリックしたら
         $(".modal-open").click(function(){
+            var store_id = $(this).data('id');
+
+            var store;
+            $.each(g_stores, function(i, elem){
+                if (elem.gsx$店番号.$t != "" && store_id == elem.gsx$店番号.$t) {
+                    store = elem;
+                }
+            });
+
             //body内の最後に<div id="modal-bg"></div>を挿入
-            $("body").append('<div id="modal-bg"></div>');
+            var html = '<div id="modal-bg"><div id="modal-main">';
+            html += '<div class="name">';
+            html += store.gsx$店舗名.$t;
+            html += '</div>';
+            html += '<div class="description">';
+            html += '<img src="' + store.gsx$メニュー画像.$t + '">';
+            html += '</div>';
+            html += '<div class="modal-live">';
+            html += '';
+            html += '</div>';
+            html += '<div class="links">';
+            if (store.gsx$map.$t != "") {
+                html += '<a href="' + store.gsx$map.$t + '" class="left" target="_blank"><img src="./img/icon/map.png" alt="Map" title="' + store.gsx$店舗名.$t + 'への道"></a>';
+            }
+            if (store.gsx$facebook.$t != "") {
+                html += '<a href="' + store.gsx$facebook.$t + '" class="left" target="_blank"><img src="./img/icon/facebook.png" alt="Facebook" title="' + store.gsx$店舗名.$t + 'Facebook"></a>';
+            }
+            if (store.gsx$twitter.$t != "") {
+                html += '<a href="' + store.gsx$twitter.$t + '" class="left" target="_blank"><img src="./img/icon/twitter.png" alt="Twitter" title="' + store.gsx$店舗名.$t + 'Twitter"></a>';
+            }
+            if (store.gsx$instagram.$t != "") {
+                html += '<a href="' + store.gsx$instagram.$t + '" class="left" target="_blank"><img src="./img/icon/instagram.png" alt="Instagram" title="' + store.gsx$店舗名.$t + 'Instagram"></a>';
+            }
+            html += '</div>';
+            html += '</div></div>';
+            $("body").append(html);
 
             //画面中央を計算する関数を実行
             modalResize();
@@ -205,9 +245,9 @@ $(function(){
             //画面のどこかをクリックしたらモーダルを閉じる
             $("#modal-bg,#modal-main").click(function(){
                 $("#modal-main,#modal-bg").fadeOut("slow",function(){
-                //挿入した<div id="modal-bg"></div>を削除
-                $('#modal-bg').remove() ;
-            });
+                    //挿入した<div id="modal-bg"></div>を削除
+                    $('#modal-bg').remove() ;
+                });
 
             });
 
@@ -223,12 +263,12 @@ $(function(){
 
                 //取得した値をcssに追加する
                 $("#modal-main").css({
-                "left": ((w - cw)/2) + "px",
-                "top": ((h - ch)/2) + "px"
+                    "left": ((w - cw)/2) + "px",
+                    "top": ((h - ch)/2) + "px"
                 });
             }
         });
-        */
+        /**/
     }
     renderStoreList();
     getOiriComment();
