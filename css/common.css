@@ -46,7 +46,7 @@ h2{
 
 div.wrapper {
     padding: 2px 0;
-    background-color: #BBE1E8;
+    background-color: #eaf3fb;
 }
 
 .header {
@@ -461,7 +461,7 @@ div.accordion_item {
 }
 .koshibura h2.live {
     position: absolute;
-    right: 0;
+    right: -5px;
     top: 0;
     -moz-transform: rotate(20deg);
     -webkit-transform: rotate(20deg);
@@ -470,6 +470,10 @@ div.accordion_item {
     transform: rotate(20deg);
     color: #b22;
     padding: 3px;
+    text-shadow: 1px 1px 0 #fff,
+             -1px 1px 0 #fff,
+             1px -1px 0 #fff,
+             -1px -1px 0 #fff;
     display: none;
 }
 
