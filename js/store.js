@@ -215,9 +215,23 @@ $(function(){
             html += '</div>';
             html += '<div class="description">';
             html += '<img src="' + store.gsx$メニュー画像.$t + '">';
+            html += '<div class="detail">';
+            html += '<h3 class="">営業時間</h3>';
+            html += '<p class="time">'+store.gsx$開店時間.$t+' - '+store.gsx$閉店時間.$t+'</p>';
+            if (store.gsx$開店時間2.$t != "" && store.gsx$閉店時間2.$t != "") {
+                html += '<p class="time">'+store.gsx$開店時間2.$t+' - '+store.gsx$閉店時間2.$t+'</p>';
+            }
+            if (store.gsx$カテゴリ.$t == "店舗") {
+                html += '<h3 class="">提供メニュー</h3>';
+            } else {
+                html += '<h3 class="">見どころ</h3>';
+            }
+            html += '<p class="menu1">'+store.gsx$メニュー1.$t+'</p>';
+            html += '<p class="menu2">'+store.gsx$メニュー2.$t+'</p>';
+            html += '</div>';
             html += '</div>';
             html += '<div class="modal-live">';
-            html += '';
+            html += '<p>' + nl2br(store.gsx$説明.$t) + '</p>';
             html += '</div>';
             html += '<div class="links">';
             if (store.gsx$map.$t != "") {
@@ -270,6 +284,13 @@ $(function(){
         });
         /**/
     }
+
+    function nl2br(str) {
+        str = str.replace(/\r\n/g, "<br />");
+        str = str.replace(/(\n|\r)/g, "<br />");
+        return str;
+    }
+
     renderStoreList();
     getOiriComment();
 
