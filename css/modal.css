@@ -45,11 +45,13 @@
 #modal-main .description .detail h3 {
     margin: 0;
     font-size: 16px;
+    line-height: 1.5em;
     margin: 3px 0;
 }
 #modal-main .description .detail p {
     margin: 0;
     font-size: 14px;
+    line-height: 1.5em;
     padding-left: 5px;
 }
 
@@ -61,6 +63,7 @@
 }
 #modal-main .modal-live p {
     margin: 0;
+    line-height: 1.5em;
 }
 
 #modal-main .links {

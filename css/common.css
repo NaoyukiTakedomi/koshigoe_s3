@@ -34,6 +34,7 @@ h1 {
     -webkit-margin-after: 0;
     padding: 0;
     font-size: 16px;
+    line-height: 1.5em;
 }
 h2{
     -webkit-margin-before: 0em;
@@ -42,6 +43,14 @@ h2{
     -webkit-margin-end: 0px;
     font-size: 16px;
     font-weight: bold;
+    line-height: 1.5em;
+}
+
+h3 {
+    line-height: 1.5em;
+}
+p {
+    line-height: 1.5em;
 }
 
 div.wrapper {
@@ -494,6 +503,7 @@ div.accordion_item {
 .oiri-log p {
     margin: 0;
     word-wrap: break-word;
+    line-height: 2.0em;
 }
 .oiri-log .name {
     border-left: solid 10px #b22;
