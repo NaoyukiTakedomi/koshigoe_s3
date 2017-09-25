@@ -5,6 +5,8 @@ $(function(){
         var count = 0;
         var today = new Date();
 
+      getTicketRestCount();
+
         count = compareDate(2017, 11, 25, today.getFullYear(), today.getMonth()+1, today.getDate());
         $('#countdown_day').text(count);
 
@@ -70,6 +72,35 @@ $(function(){
                 });
             }
         });
+    }
+
+    function getTicketRestCount() {
+      // ID of the Google Spreadsheet
+      var spreadsheetID = "1hiEFK5SNpMUndJsFOuDBvZVS42VRYOttBC0WtrI8g1o";
+      var sheetID = "oau3yae";
+
+      // Make sure it is public or set to Anyone with link can view
+      var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/" + sheetID +"/public/values?alt=json";
+
+      var firstDayRestTicketCountColumn = 'gsx$残り枚数25日';
+      var secondDayRestTicketCountColumn = 'gsx$残り枚数26日';
+
+      function updateRestCount(restID, linkID, count) {
+        if (count > 0) {
+          $(restID).html('のこり<span>' + count + '</span>枚');
+        } else {
+          $(restID).html('<span>完売</span>');
+          $(linkID).addClass('is-sold-out');
+        }
+      }
+
+      $.getJSON(url, function(data) {
+        var firstDayRestTicketCount = data['feed']['entry'][0][firstDayRestTicketCountColumn]['$t'];
+        var secondDayRestTicketCount = data['feed']['entry'][0][secondDayRestTicketCountColumn]['$t'];
+
+        updateRestCount('#first-day-rest', '#first-day-link', firstDayRestTicketCount);
+        updateRestCount('#second-day-rest', '#second-day-link', secondDayRestTicketCount);
+      });
     }
 
     init();
