@@ -85,3 +85,36 @@
     font-size: 14px;
     font-weight: bold;
 }
+
+.facebook a {
+    display: flex;
+
+    padding: 5px;
+    border: 1px solid #3b5998;
+    background-color: #3b5998;
+
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.facebook img {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 55px;
+    height: 55px;
+}
+
+.facebook .text p:first-child {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.facebook .text p:last-child {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.facebook div.text {
+    margin-left: 30px;
+}
