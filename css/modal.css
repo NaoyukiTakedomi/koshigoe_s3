@@ -32,6 +32,7 @@
 }
 #modal-main .description img {
     height: 160px;
+    width: 160px;
     padding: 5px 5px 5px 0;
     display: inline-block;
 }
