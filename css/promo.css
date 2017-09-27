@@ -11,6 +11,10 @@
     border:none;
 }
 
+h2 {
+    text-align: center;
+}
+
 .about {
     text-align: center;
 }
@@ -19,7 +23,7 @@
     margin: 10px 0 5px 0;
     /*padding: 5px;*/
 }
-.about p {
+.about p.about-desc {
     width: 375px;
     background-image: url(./../img/koshigoe_image.jpg);
     background-size: cover;
@@ -60,7 +64,33 @@
     /*border: solid 1px #ddd;*/
 }
 
-
+.store-btn {
+    width: 200px;
+    margin: 20px auto 5px auto;
+    /*background-color: #ddd;*/
+    padding: 5px;
+    border: solid 2px #ddd;
+    border-radius: 2px;
+}
+.store-btn a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    /*width: 375px;*/
+}
+.store-btn img {
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.store-btn p {
+    margin: 0;
+    height: 40px;
+    line-height: 40px;
+}
 
 .ticket-btn {
     margin: 30px auto;

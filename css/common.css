@@ -175,6 +175,7 @@ table.list td {
    Instagram
  ***********************/
 .instagram {
+    text-align: center;
 }
 .instagram img{
     height: 40px;
@@ -205,6 +206,7 @@ table.list td {
  ***********************/
 .admin-message {
     margin: 10px auto;
+    text-align: center;
 }
 .admin-message h2{
     padding: -3px 0 0 0;
