@@ -126,19 +126,19 @@ $(function(){
                 }
 
                 // Column names are name, age, etc.
-                var html = '<div class="store clearfix"><div class="store-img left">';
-                if (this.gsx$link.$t != "") {
-                    html += '<a href="' + this.gsx$link.$t + '" target="_blank">';
-                }
+                var html = '<div class="store clearfix"><div class="store-img modal-open left" data-id="' + this.gsx$店番号.$t + '">';
+                // if (this.gsx$link.$t != "") {
+                //     html += '<a href="' + this.gsx$link.$t + '" target="_blank">';
+                // }
                 if (this.gsx$メニュー画像.$t != "") {
                     html += '<img src="' + this.gsx$メニュー画像.$t + '">';
                 } else {
-                    html += '<img class="modal-open" src="./img/menu/dummy.png" data-id="' + this.gsx$店番号.$t + '">';
+                    html += '<img src="./img/menu/dummy.png" data-id="' + this.gsx$店番号.$t + '">';
                 }
-                if (this.gsx$link.$t != "") {
-                    html += '</a>';
-                }
-                html += '</div><div class="store-desc modal-open left" data-id="' + this.gsx$店番号.$t + '">';
+                // if (this.gsx$link.$t != "") {
+                //     html += '</a>';
+                // }
+                html += '</div><div class="store-desc left" data-id="' + this.gsx$店番号.$t + '">';
                 html += '<h3>' + this.gsx$店舗名.$t + '</h3>';
                 html += '<p class="eat">'+this.gsx$メニュー1.$t+'</p>';
                 html += '<p class="drink">'+this.gsx$メニュー2.$t+'</p>';
