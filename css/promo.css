@@ -11,6 +11,57 @@
     border:none;
 }
 
+.about {
+    text-align: center;
+}
+.about h2,
+.about h3 {
+    margin: 10px 0 5px 0;
+    /*padding: 5px;*/
+}
+.about p {
+    width: 375px;
+    background-image: url(./../img/koshigoe_image.jpg);
+    background-size: cover;
+    color: #eee;
+    /*font-family: cursive;*/
+    font-family: serif;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin: 0;
+    display: table-cell;
+    vertical-align: middle;
+    text-shadow: 1px 1px 2px #224;
+    height: 100px;
+}
+.price h3 {
+    font-size: 14px;
+}
+.price table {
+    margin: 10px auto;
+    font-size: 14px;
+    width: 200px;
+    border-collapse: separate;
+    border-spacing: 3px;
+}
+.price table th {
+    background-color: #96c3e8;
+    color: #f0f0f0;
+    width: 100px;
+    padding: 1px;
+    border-radius: 2px;
+    /*border: solid 1px #ddd;*/
+}
+.price table td {
+    background-color: #f3f3f3;
+    width: 100px;
+    padding: 3px;
+    border-radius: 2px;
+    /*border: solid 1px #ddd;*/
+}
+
+
+
 .ticket-btn {
     margin: 30px auto;
     text-align: center;
@@ -81,7 +132,7 @@
     color: #444;
 }
 
-.ticket-btn .caution h3 {
+.ticket-btn h3 {
     font-size: 14px;
     font-weight: bold;
 }
