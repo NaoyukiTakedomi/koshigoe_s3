@@ -23,20 +23,21 @@ h2 {
     margin: 10px 0 5px 0;
     /*padding: 5px;*/
 }
-.about p.about-desc {
+.about div.about-desc {
     width: 375px;
     background-image: url(./../img/koshigoe_image.jpg);
     background-size: cover;
     color: #eee;
-    /*font-family: cursive;*/
-    font-family: serif;
     padding: 5px 10px;
-    font-size: 12px;
     margin: 0;
     display: table-cell;
     vertical-align: middle;
-    text-shadow: 1px 1px 2px #224;
     height: 100px;
+}
+.about div.about-desc p{
+    text-shadow: 1px 1px 2px #224;
+    font-family: serif;
+    font-size: 12px;
 }
 .price h3 {
     font-size: 14px;
