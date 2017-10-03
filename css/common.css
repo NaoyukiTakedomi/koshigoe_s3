@@ -87,19 +87,20 @@ div.wrapper {
     padding: 0 0 10px 0;
     margin: 0;
 }
-.footer p.kyosan {
+.footer p.kyosan,
+.footer p.kyoryoku {
     padding-left: 3em;
     text-indent: -3em;
 }
+.footer span {
+    /*padding: 0 3px 0 0;*/
+    margin: 0 3px 3px 0;
+    display: inline;
+    white-space: nowrap;
+    width: auto;
+}
 .footer img {
-    height: 20px;
-    padding: 0 5px;
-}
-.footer .kyosan img {
-    padding: 0 10px 0 5px;
-}
-.footer .kyosan span {
-    padding: 0 5px;
+    height: 15px;
 }
 .footer span.member {
     padding: 0 3px;
