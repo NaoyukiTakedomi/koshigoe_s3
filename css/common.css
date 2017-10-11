@@ -54,6 +54,10 @@ p {
     line-height: 1.5em;
 }
 
+reg {
+    vertical-align: sub;
+}
+
 div.wrapper {
     padding: 2px 0;
     background-color: #eaf3fb;
@@ -80,31 +84,26 @@ div.wrapper {
 
 .footer {
     margin: 10px auto 0 auto;
+    text-align: center;
+}
+.footer h5 {
+    margin: 10px 0;
+    color: #848484;
 }
 .footer p {
-    vertical-align: middle;
-    font-size: 12px;
-    padding: 0 0 10px 0;
     margin: 0;
 }
-.footer p.kyosan,
-.footer p.kyoryoku {
-    padding-left: 3em;
-    text-indent: -3em;
+.footer img {
+    height: 20px;
+}
+.footer img#monorail {
+    height: 18px;
 }
 .footer span {
-    /*padding: 0 3px 0 0;*/
-    margin: 0 3px 3px 0;
+    margin: 0 20px 5px 0;
     display: inline;
     white-space: nowrap;
     width: auto;
-}
-.footer img {
-    height: 15px;
-}
-.footer span.member {
-    padding: 0 3px;
-    font-size: 80%;
 }
 
 .tweet {
@@ -335,7 +334,6 @@ table.list td {
     height: 70px;
 }
 .store .store-img img {
-    /*width: 100%;*/
     width: 70px;
     height: 70px;
 }
@@ -359,6 +357,11 @@ table.list td {
     margin: 1px 0;
     position: relative;
     z-index: 10;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
 }
 .store .store-desc div.gauge {
     position: absolute;
