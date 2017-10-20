@@ -7,7 +7,7 @@ require('./common');
 require('./gapi');
 
 $(function () {
-  g_stores = "";
+  var g_stores = "";
 
   $('.accordion').on('click', function () {
     $(this).next().slideToggle();

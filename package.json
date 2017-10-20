@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/NaoyukiTakedomi/koshigoe_s3#readme",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.5",
     "node-sass": "^4.5.3",
