@@ -19,5 +19,8 @@
   "homepage": "https://github.com/NaoyukiTakedomi/koshigoe_s3#readme",
   "devDependencies": {
     "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
   }
 }
