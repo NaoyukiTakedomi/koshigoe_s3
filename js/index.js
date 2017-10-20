@@ -1,3 +1,6 @@
+require('../css/common.css');
+require('../css/balloon.css');
+
 var $ = require('jquery');
 require('./common');
 

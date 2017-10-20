@@ -1,3 +1,8 @@
+require('../css/common.css');
+require('../css/promo.css');
+require('../css/balloon.css');
+require('../css/modal.css');
+
 var $ = require('jquery');
 require('./common');
 require('./index');

@@ -1,6 +1,6 @@
 .ifrm-container {
-    width:100%;//320px;
-    height:100%;//450px;
+    width:100%; /* 320px; */
+    height:100%; /* 450px; */
     overflow:auto;
     position: fixed;
     -webkit-overflow-scrolling:touch;
@@ -25,7 +25,7 @@ h2 {
 }
 .about div.about-desc {
     width: 375px;
-    background-image: url(./../img/koshigoe_image.jpg);
+    background-image: url(../img/koshigoe_image.jpg);
     background-size: cover;
     color: #eee;
     padding: 5px 10px;

@@ -1,3 +1,7 @@
+require('../css/common.css');
+require('../css/store.css');
+require('../css/modal.css');
+
 var $ = require('jquery');
 require('./common');
 require('./gapi');
