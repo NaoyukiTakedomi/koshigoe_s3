@@ -42,9 +42,11 @@ h2{
     -webkit-margin-after: 0em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     line-height: 1.5em;
+    margin: 10px 0;
+    color: #444;
 }
 
 h3 {

@@ -44,27 +44,63 @@
     vertical-align: top;
 }
 #modal-main .description .detail h3 {
-    margin: 0;
     font-size: 16px;
-    line-height: 1.5em;
-    margin: 3px 0;
+    line-height: 2.5em;
+    margin: 10px 0 3px 0;
 }
 #modal-main .description .detail p {
     margin: 0;
-    font-size: 14px;
-    line-height: 1.5em;
-    padding-left: 5px;
+    font-size: 16px;
+    line-height: 2.5em;
+    padding-left: 10px;
+}
+
+#modal-main .modal-menu {
+    height: 40px;
+    margin: 5px 5px;
+    width: calc(100% - 10px);
+    background-color: #fff;
+    font-size: 13px;
+}
+#modal-main .modal-menu p.menu1::before {
+    content: ' ';
+    padding-right: 25px;
+    color: #BBE1E8;
+    background-image: url(./../img/icon/food.png);
+    background-size: 18px;
+    background-repeat: no-repeat;
+}
+#modal-main .modal-menu p.menu2::before {
+    content: ' ';
+    padding-right: 25px;
+    color: #BBE1E8;
+    background-image: url(./../img/icon/drink.png);
+    background-size: 18px;
+    background-repeat: no-repeat;
 }
 
 #modal-main .modal-live {
-    height: 180px;
-    margin: 10px 5px;
+    height: 100px;
+    margin: 5px 5px;
     width: calc(100% - 10px);
     background-color: #fff;
+    font-size: 13px;
 }
+#modal-main .modal-live.spot {
+    height: 190px;
+}
+#modal-main .modal-menu p,
 #modal-main .modal-live p {
     margin: 0;
     line-height: 1.5em;
+    text-indent: -25px;
+    margin-left: 25px;
+}
+#modal-main .modal-live p::before {
+    content: '\f164';
+    font-family: 'FontAwesome';
+    padding-right: 13px;
+    color: #BB2222;
 }
 
 #modal-main .links {

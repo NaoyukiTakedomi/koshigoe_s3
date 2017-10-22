@@ -46,11 +46,11 @@ $(function(){
         var spreadsheetID = "1hiEFK5SNpMUndJsFOuDBvZVS42VRYOttBC0WtrI8g1o";
 
         // Make sure it is public or set to Anyone with link can view
-        var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/or594f6/public/values?alt=json";
+        var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/o3riw6r/public/values?alt=json";
 
         $.getJSON(url, function(data) {
             var entry = data.feed.entry;
-            entry.reverse();
+            // entry.reverse();
 
             $(entry).each(function(){
                 if (this.gsx$お店の名前.$t != "" && this.gsx$タイムスタンプ.$t != "" && this.gsx$混雑状況は.$t != "") {
@@ -221,18 +221,24 @@ $(function(){
             if (store.gsx$開店時間2.$t != "" && store.gsx$閉店時間2.$t != "") {
                 html += '<p class="time">'+store.gsx$開店時間2.$t+' - '+store.gsx$閉店時間2.$t+'</p>';
             }
+            html += '</div>';
+            html += '</div>';
             if (store.gsx$カテゴリ.$t == "店舗") {
-                html += '<h3 class="">提供メニュー</h3>';
+                html += '<div class="modal-menu">';
+                html += '<p class="menu1">'+store.gsx$メニュー1.$t+'</p>';
+                html += '</div>';
+                html += '<div class="modal-menu">';
+                html += '<p class="menu2">'+store.gsx$メニュー2.$t+'</p>';
+                html += '</div>';
+                html += '<div class="modal-live">';
+                html += '<p>' + nl2br(store.gsx$説明.$t) + '</p>';
+                html += '</div>';
             } else {
-                html += '<h3 class="">見どころ</h3>';
+                html += '<div class="modal-live spot">';
+                html += '<p>' + nl2br(store.gsx$説明.$t) + '</p>';
+                html += '</div>';
             }
-            html += '<p class="menu1">'+store.gsx$メニュー1.$t+'</p>';
-            html += '<p class="menu2">'+store.gsx$メニュー2.$t+'</p>';
-            html += '</div>';
-            html += '</div>';
-            html += '<div class="modal-live">';
-            html += '<p>' + nl2br(store.gsx$説明.$t) + '</p>';
-            html += '</div>';
+
             html += '<div class="links">';
             if (store.gsx$map.$t != "") {
                 html += '<a href="' + store.gsx$map.$t + '" class="left" target="_blank"><img src="./img/icon/map.png" alt="Map" title="' + store.gsx$店舗名.$t + 'への道"></a>';

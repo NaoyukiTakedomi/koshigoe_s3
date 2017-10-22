@@ -100,6 +100,26 @@ h2 {
     border-top: solid 5px #ddd;
     border-bottom: solid 5px #ddd;
 }
+.ticket-btn .reserve-pre{
+    position: absolute;
+    color: rgba(255,30,30,0.7);
+    font-size: 36px;
+    font-weight: 800;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-shadow: 1px 1px 0 #fff,
+             -1px 1px 0 #fff,
+             1px -1px 0 #fff,
+             -1px -1px 0 #fff;
+
+}
+.ticket-btn .reserve-desc{
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #444;
+}
 .ticket-btn a {
     display: inline-block;
     width: calc(45% - 40px);
@@ -199,4 +219,63 @@ h2 {
 
 .facebook div.text {
     margin-left: 30px;
+}
+
+.howto {
+    border-top: solid 1px #96c4e8;
+    border-bottom: solid 1px #96c4e8;
+}
+
+.howto h2 {
+    color: #96c4e8;
+    margin-bottom: 0;
+}
+.howto h2 + p {
+    margin: 0 5px;
+    font-size: 12px;
+    color: #777;
+    font-weight: normal;
+    text-align: center;
+}
+
+.howto ol {
+    counter-reset: li;    /* li のカウンタを 0 にセット */
+    list-style: none;
+    text-align: center;
+    font-size: 16px;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
+.howto ol li {
+    margin: 5px 0;
+    font-weight: bold;
+}
+.howto ol li:before {
+    color: #96c4e8;
+    font-size: 21px;
+    font-weight: bold;
+    counter-increment: li;   /* li の数を一つずつ増加 */
+    content: counter(li) ". ";          /* 数を表示 */
+}
+.howto ol li span {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.howto ul {
+    counter-reset: li;    /* li のカウンタを 0 にセット */
+    list-style: none;
+    font-size: 10px;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 5px;
+}
+.howto ul li {
+    margin: 2px 0;
+    text-align: center;
 }
