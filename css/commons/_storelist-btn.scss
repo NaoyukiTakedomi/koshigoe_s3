@@ -1,0 +1,36 @@
+/***********************
+   Store list button
+ ***********************/
+.storelist-btn {
+  width: 90%;
+  margin: 30px auto;
+  height: 100px;
+
+  img {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px 0 0 10px;
+    float: left;
+  }
+
+  div {
+    height: 74px;
+    line-height: 74px;
+    width: calc(100% - 120px);
+    padding: 13px 10px;
+    background-color: #7acce7;
+    border-radius: 0 10px 10px 0;
+    font-size: 6.5vw;
+    text-align: center;
+    color: #FFF;
+    float: left;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  @media screen and (min-width:700px) {
+    & div {
+      font-size: 45.5px;
+    }
+  }
+}

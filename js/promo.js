@@ -1,7 +1,4 @@
-require('../css/common.scss');
 require('../css/promo.scss');
-require('../css/balloon.scss');
-require('../css/modal.scss');
 
 var $ = require('jquery');
 require('./common');

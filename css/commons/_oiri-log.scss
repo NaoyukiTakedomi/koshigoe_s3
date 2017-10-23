@@ -1,0 +1,52 @@
+/********************************
+ * Oiri log
+ ********************************/
+.koshibura {
+  position: relative;
+}
+.koshibura h2.live {
+  position: absolute;
+  right: -5px;
+  top: 0;
+  -moz-transform: rotate(20deg);
+  -webkit-transform: rotate(20deg);
+  -o-transform: rotate(20deg);
+  -ms-transform: rotate(20deg);
+  transform: rotate(20deg);
+  color: #b22;
+  padding: 3px;
+  text-shadow: 1px 1px 0 #fff,
+  -1px 1px 0 #fff,
+  1px -1px 0 #fff,
+  -1px -1px 0 #fff;
+  display: none;
+}
+
+#oiri_list {
+  max-height: 12em;
+  overflow: scroll;
+  background-color: #fff0f0;
+  padding: 0 5px;
+  border-left: solid 1px #b22;
+  border-right: solid 5px #b22;
+}
+.oiri-log {
+  position: relative;
+  margin: 8px 2px;
+  font-size: 12px;
+}
+.oiri-log p {
+  margin: 0;
+  word-wrap: break-word;
+  line-height: 2.0em;
+}
+.oiri-log .name {
+  border-left: solid 10px #b22;
+  border-radius: 10px 0 0 10px;
+  padding: 2px 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.oiri-log .time {
+  margin-left: 10px;
+}

@@ -1,0 +1,30 @@
+.price {
+  h3 {
+    font-size: 14px;
+  }
+
+  table {
+    margin: 10px auto;
+    font-size: 14px;
+    width: 200px;
+    border-collapse: separate;
+    border-spacing: 3px;
+
+    th {
+      background-color: #96c3e8;
+      color: #f0f0f0;
+      width: 100px;
+      padding: 1px;
+      border-radius: 2px;
+      /*border: solid 1px #ddd;*/
+    }
+
+    td {
+      background-color: #f3f3f3;
+      width: 100px;
+      padding: 3px;
+      border-radius: 2px;
+      /*border: solid 1px #ddd;*/
+    }
+  }
+}

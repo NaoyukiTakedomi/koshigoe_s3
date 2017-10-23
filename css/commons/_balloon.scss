@@ -1,0 +1,31 @@
+.balloon {
+  position: relative;
+  display: inline-block;
+  padding: 0 5px;
+  width: calc(80% - 27px);
+  min-height: 34px;
+  vertical-align: center;
+  height: auto;
+  margin: 1px 0;
+  color: #19283C;
+  font-size: 12px;
+  text-align: left;
+  background: #FFF;
+  border: 2px solid #BBE1E8;
+  border-radius: 10px;
+  z-index: 0;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%; left: -10px;
+    margin-top: -9px;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 9px 9px 9px 0;
+    border-color: transparent #BBE1E8 transparent transparent;
+    z-index: 0;
+  }
+}

@@ -1,0 +1,23 @@
+/***********************
+   Key Visual
+ ***********************/
+
+.keyvisual {
+  position: relative;
+
+  img{
+    width: 100%;
+  }
+
+  &-copyright {
+    font-size: 10px;
+    color: #FFFFFF;
+    line-height: 10px;
+    margin: 5px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+  }
+}
+
+

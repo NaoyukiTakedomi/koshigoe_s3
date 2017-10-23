@@ -1,0 +1,35 @@
+/***********************
+   Admin message
+ ***********************/
+.admin-message {
+  margin: 10px auto;
+  text-align: center;
+
+  h2 {
+    padding: -3px 0 0 0;
+    margin: 0 5px;
+    font-size: 12px;
+    color: #777;
+    font-weight: normal;
+  }
+
+  p {
+    padding: 0px;
+    margin: 0 2px 0 5px;
+    font-size: 12px;
+    color: #333;
+  }
+
+  .koshitter {
+    height: 30px;
+    padding-left: 6px;
+  }
+
+  .admin-avator {
+    width: 40px;
+    max-width: 20%;
+    border-radius: 50%;
+    margin: auto 15px auto 5px;
+    float: left;
+  }
+}

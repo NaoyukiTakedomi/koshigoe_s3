@@ -1,0 +1,85 @@
+.ticket-btn {
+  margin: 30px auto;
+  text-align: center;
+  padding: 10px 0;
+  border-top: solid 5px #ddd;
+  border-bottom: solid 5px #ddd;
+
+  a {
+    display: inline-block;
+    width: calc(45% - 40px);
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  p {
+    margin: 0;
+
+    &.top {
+      &.sat {
+        color: #f0f0f0;
+        background-color: #6eadbb;
+        border-radius: 3px 3px 0 0;
+        font-size: 16px;
+      }
+
+      &.sun {
+        color: #f0f0f0;
+        background-color: #a03030;
+        border-radius: 3px 3px 0 0;
+        font-size: 16px;
+      }
+    }
+
+    &.bottom {
+      color: #151515;
+      background-color: #f7f7f7;
+      border-radius: 0 0 3px 3px;
+      font-size: 50px;
+    }
+
+    &.rest {
+      color: #151515;
+      font-size: 12px;
+
+      span {
+        font-size: 16px;
+        color: #FF2020;
+        font-weight: bold;
+        padding: 0 2px;
+      }
+    }
+  }
+
+  div {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  img {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  h2 {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 40px;
+    vertical-align: middle;
+    margin: 0 10px;
+    font-weight: normal;
+  }
+
+  .caution {
+    font-size: 10px;
+    color: #444;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}

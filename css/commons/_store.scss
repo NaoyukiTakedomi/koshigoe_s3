@@ -1,0 +1,146 @@
+/***********************
+   Store
+ ***********************/
+.store {
+  margin: 5px 0;
+}
+
+.store .store-img {
+  width: 70px;
+  height: 70px;
+}
+.store .store-img img {
+  width: 70px;
+  height: 70px;
+}
+
+.store .store-desc {
+  width: calc(80% - 70px);
+  margin: 0;
+  height: 70px;
+  position: relative;
+}
+.store .store-desc h3 {
+  font-size: 12px;
+  padding: 0 0 0 3px;
+  margin: 1px 0;
+  position: relative;
+  z-index: 10;
+}
+.store .store-desc p {
+  font-size: 10px;
+  padding: 0 0 0 6px;
+  margin: 1px 0;
+  position: relative;
+  z-index: 10;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+}
+.store .store-desc div.gauge {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #ffc0cd;
+  height: 70px;
+  width: calc(80% - 70px);
+  z-index: 5;
+}
+
+.store .store-oiri {
+  width: 20%;
+}
+.store .store-oiri img {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  margin: 0 auto;
+}
+.store .store-oiri p {
+  height: 14px;
+  font-size: 12px;
+  width: 50px;
+  line-height: 14px;
+  padding: 0;
+  color: #f01100;
+  font-weight: bold;
+  font-family: "arial";
+  text-align: center;
+  margin-top: -4px;
+}
+
+
+.store-balloon {
+  position: relative;
+  display: inline-block;
+  padding: 0 15px;
+  width: calc(100% - 40px);
+  height: auto;
+  color: #555555;
+  line-height: 20px;
+  text-align: left;
+  background: #ffffff;
+  border: 1px solid #BBE1E8;
+  border-radius: 50px;
+  z-index: 0;
+  font-size: 12px;
+  margin: 3px;
+}
+.store-balloon:before {
+  content: "";
+  position: absolute;
+  top: -17px; left: 15px;
+  margin-right: 0;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border: 1px solid #BBE1E8;
+  border-radius: 50%;
+  z-index: -1;
+}
+.store-balloon:after {
+  content: "";
+  position: absolute;
+  top: -25px; left: 25px;
+  margin-right: 0;
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: #ffffff;
+  border: 1px solid #BBE1E8;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+h2.accordion {
+  border-top: solid 3px #BBE1E8;
+  border-bottom: solid 3px #BBE1E8;
+  color: #202020;
+  font-weight: normal;
+  font-size: 14px;
+  padding: 5px 10px 5px 2em;
+  text-indent: -1em;
+  transition: all 300ms 0s ease;
+}
+h2.accordion.active {
+  border-bottom: solid 1px #BBE1E8;
+}
+h2.accordion::before {
+  content: '\f101';
+  font-family: 'FontAwesome';
+  padding-right: 8px;
+  color: #BBE1E8;
+}
+h2.accordion.active::before {
+  content: '\f103';
+  padding-right: 7px;
+}
+h2.accordion img {
+  height: 15px;
+}
+div.accordion_item {
+  border-bottom: solid 3px #BBE1E8;
+}
