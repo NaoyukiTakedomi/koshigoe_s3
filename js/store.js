@@ -1,6 +1,6 @@
-require('../css/common.css');
-require('../css/store.css');
-require('../css/modal.css');
+require('../css/common.scss');
+require('../css/store.scss');
+require('../css/modal.scss');
 
 var $ = require('jquery');
 require('./common');
