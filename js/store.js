@@ -221,6 +221,9 @@ $(function(){
             if (store.gsx$開店時間2.$t != "" && store.gsx$閉店時間2.$t != "") {
                 html += '<p class="time">'+store.gsx$開店時間2.$t+' - '+store.gsx$閉店時間2.$t+'</p>';
             }
+            html += '<p class="note">';
+            html += '※ぶら呑みイベント開催時';
+            html += '</p>';
             html += '</div>';
             html += '</div>';
             if (store.gsx$カテゴリ.$t == "店舗") {
