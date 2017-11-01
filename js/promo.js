@@ -85,9 +85,11 @@ $(function(){
       var firstDayRestTicketCountColumn = 'gsx$残り枚数25日';
       var secondDayRestTicketCountColumn = 'gsx$残り枚数26日';
 
-      function updateRestCount(restID, linkID, count) {
+      function updateRestCount(restID, linkID, count, href_url) {
+        $(linkID).removeClass('is-sold-out');
         if (count > 0) {
           $(restID).html('のこり<span>' + count + '</span>枚');
+          $(linkID)[0].href = href_url;
         } else {
           $(restID).html('<span>完売</span>');
           $(linkID).addClass('is-sold-out');
@@ -98,12 +100,14 @@ $(function(){
         var firstDayRestTicketCount = data['feed']['entry'][0][firstDayRestTicketCountColumn]['$t'];
         var secondDayRestTicketCount = data['feed']['entry'][0][secondDayRestTicketCountColumn]['$t'];
 
-        updateRestCount('#first-day-rest', '#first-day-link', firstDayRestTicketCount);
-        updateRestCount('#second-day-rest', '#second-day-link', secondDayRestTicketCount);
+        updateRestCount('#first-day-rest', '#first-day-link', firstDayRestTicketCount, "https://docs.google.com/forms/d/e/1FAIpQLSewo9cIwW2LJOXlluiJ9vKD71dXcLtZQlVRP9D0kv1CUPa24A/viewform?usp=pp_url&entry.2132951387&entry.615825568=0&entry.54882148=0");
+        updateRestCount('#second-day-rest', '#second-day-link', secondDayRestTicketCount, "https://docs.google.com/forms/d/e/1FAIpQLSeJkrwZR_ijTxdUdbF9h_p3WTZvg4OwuV0PJCXo1LNjrzQmMQ/viewform?usp=pp_url&entry.2132951387&entry.615825568=0&entry.54882148=0");
+
       });
     }
 
     init();
+    setInterval(getTicketRestCount, 60000);
 
     //-->
 });
