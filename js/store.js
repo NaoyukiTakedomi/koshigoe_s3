@@ -216,13 +216,19 @@ $(function(){
             html += '<div class="description">';
             html += '<img src="' + store.gsx$メニュー画像.$t + '">';
             html += '<div class="detail">';
-            html += '<h3 class="">営業時間</h3>';
+            if (store.gsx$カテゴリ.$t == "店舗") {
+                html += '<h3 class="">営業時間</h3>';
+            } else {
+                html += '<h3 class="">オススメ訪問時間</h3>';
+            }
             html += '<p class="time">'+store.gsx$開店時間.$t+' - '+store.gsx$閉店時間.$t+'</p>';
             if (store.gsx$開店時間2.$t != "" && store.gsx$閉店時間2.$t != "") {
                 html += '<p class="time">'+store.gsx$開店時間2.$t+' - '+store.gsx$閉店時間2.$t+'</p>';
             }
             html += '<p class="note">';
-            html += '※ぶら呑みイベント開催時';
+            if (store.gsx$カテゴリ.$t == "店舗") {
+                html += '※ぶら呑みイベント開催時';
+            }
             html += '</p>';
             html += '</div>';
             html += '</div>';
