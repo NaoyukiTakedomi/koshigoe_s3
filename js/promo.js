@@ -7,9 +7,7 @@ $(function(){
 
       getTicketRestCount();
 
-        count = compareDate(2017, 11, 25, today.getFullYear(), today.getMonth()+1, today.getDate());
-        $('#countdown_day').text(count);
-
+      updateCountdown();
         // modal_reserve();
     }
     /**
@@ -26,7 +24,37 @@ $(function(){
         var dt2 = new Date(year2, month2 - 1, day2);
         var diff = dt1 - dt2;
         var diffDay = diff / 86400000;//1日は86400000ミリ秒
+        return diff;
         return diffDay;
+    }
+    function countdown(year, month, day, hour, min, sec) {
+        var now = new Date();
+        var tar = new Date(year, month - 1, day, hour, min, sec);
+        var diff = tar - now;
+        var diff_d = Math.floor(diff / 86400000);   // 1日は86400000msec
+        var rest_d = diff % 86400000;
+        var diff_h = Math.floor(rest_d / 3600000);  // 1時間は36000000msec
+        var rest_h = rest_d % 3600000;
+        var diff_m = Math.floor(rest_h / 60000);  // 1分は60000msec
+        var rest_m = rest_h % 60000;
+        var diff_s = Math.floor(rest_m / 1000);  // 1秒は1000msec
+        var rest_s = rest_m % 60000;
+        var diff_ms = Math.floor(rest_s);
+        return [diff_d, diff_h, ('00' + diff_m).slice(-2), ('00' + diff_s).slice(-2), ('00' + diff_ms).slice(-2)]
+        // return diff_d + '日' + diff_h + ':' + diff_m + ':' + ('00' + diff_s).slice(-2);
+    }
+    function updateCountdown() {
+        // count = compareDate(2017, 11, 25, today.getFullYear(), today.getMonth()+1, today.getDate());
+        count = countdown(2017, 11, 25, 11, 00, 00);
+        if (count[0] >= 0) {
+            $('#countdown_day').text(count[0]);
+            $('#countdown_hour').text(count[1]);
+            $('#countdown_min').text(count[2]);
+            $('#countdown_sec').text(count[3]);
+            $('.premode').show();
+        } else {
+            $('.premode').hide();
+        }
     }
 
     function modal_reserve() {
@@ -107,7 +135,8 @@ $(function(){
     }
 
     init();
-    setInterval(getTicketRestCount, 60000);
+    setInterval(updateCountdown, 1000);
+    setInterval(getTicketRestCount, 1000);
 
     //-->
 });

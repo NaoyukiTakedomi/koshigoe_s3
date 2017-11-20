@@ -152,16 +152,22 @@ table.list td {
     margin: 10px auto;
 }
 .countdown p {
+    font-size: 80%;
     text-align: center;
     border-top: solid 2px #7acce7;
     border-bottom: solid 2px #7acce7;
     color: #333;
+    padding: 3px 0;
 }
-.countdown span#countdown_day {
-    font-size: 135%;
+.countdown p span {
+    font-size: 150%;
     font-weight: bold;
     color: #FF2020;
-    padding: 0 5px;
+    padding: 0 4px;
+}
+
+.premode {
+    display: none;
 }
 
 /***********************
