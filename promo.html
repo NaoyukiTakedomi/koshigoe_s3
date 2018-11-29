@@ -29,6 +29,23 @@
     <script type="text/javascript" src="./js/index.js"></script>
     <script type="text/javascript" src="./js/promo.js"></script>
 
+    <style>
+    .live {
+        -moz-transform: rotate(20deg);
+        -webkit-transform: rotate(20deg);
+        -o-transform: rotate(20deg);
+        -ms-transform: rotate(20deg);
+        position:absolute;
+        right:-20px;
+        top:-15px;
+        color:#f44;
+        transform:rotate(20deg);
+        font-size: 30px;
+        font-weight: 800;
+        text-shadow: 2px 2px 0 #fff, -2px 2px 0 #fff, 2px -2px 0 #fff, -2px -2px 0 #fff;
+    }
+    </style>
+
 </head>
 
 <body>
@@ -69,19 +86,22 @@
                         </tr>
                     </table>
                 </div>
-                <div class="store-btn">
+                <div class="store-btn" style="position:relative;width:250px;background-color:#96c2e8;border:none;">
                     <a href="./store.html">
-                        <p><img src="./img/icon/beer.png">参加店舗をみる &gt;</p>
+                        <p style="color:#fff;font-size:20px"><img src="./img/icon/beer.png">参加店舗をみる</p>
                     </a>
+                    <p class="live going">LIVE!</p>
                 </div>
             </div>
 
             <div class="inner-section ticket-btn clearfix">
-                <div>
+
+                <div class="premode">
                     <img src="./img/icon/ticket_sat.png">
                     <h2 class="">前売券予約</h2>
                     <img src="./img/icon/ticket_sun.png">
                 </div>
+                <!--
                 <p class="reserve-desc">▼&nbsp;予約したい日をクリック！&nbsp;▼</p>
                 <a id="first-day-link" href="javascript:void(0)">
                     <p class="top sat">SAT</p>
@@ -93,15 +113,19 @@
                     <p class="bottom">26</p>
                     <p id="second-day-rest" class="rest">Loading...</p>
                 </a>
+                 -->
+                <p class="kanbai premode">完売御礼</p>
+                <p class="kanbai-sub premode">おかげさまで前売券は両日完売いたしました</p>
+                <p class="kanbai-sub premode">チケット売り場にて当日券をお求めください</p>
                 <div class="caution">
-                    <h3>前売券予約にあたっての注意</h3>
-                    <p>予約は 11/24 18:00 を以て締め切ります</p>
-                    <p>チケット売り場で予約した名前をお伝えください</p>
-                    <p>チケットは開催日（土、日）で分かれています</p>
-                    <p>日をまたいで使うことはできません</p>
-                    <p>前売券は1日100枚限定です</p>
-                    <p>完売時は現地で当日券をお買い求めください</p>
+                    <h3>チケット購入にあたっての注意</h3>
+                    <!-- <p>予約は 11/24 18:00 を以て締め切ります</p> -->
+                    <p>前売券予約された方はチケット売り場にて<br>名前とメールアドレスをお伝え下さい</p>
+                    <p>チケットは開催日（土、日）で分かれています<br>日をまたいで使うことはできません</p>
+                    <p>当日券は開催日それぞれ300枚販売いたします<br>当日券は売切次第終了となります</p>
+                    <p style="color:white; font-size:40%; margin:0;">ぶら呑みはブラジャー一枚で街を歩くことではありません</p>
                 </div>
+
             </div>
 
             <div class="inner-section map">
